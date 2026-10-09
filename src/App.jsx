@@ -430,7 +430,7 @@ function Auth({ onAuth }) {
           )}
 
           <button
-            onClick={() => onAuth(role, name || "Ananya Sharma")}
+            onClick={() => onAuth(role, name || "Roshini")}
             className="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 mt-2">
             {mode === "register" ? "Create Account" : "Log In"}
           </button>
@@ -470,7 +470,7 @@ function Onboarding({ name, onComplete }) {
         {step === 1 && (
           <div className="space-y-4">
             <h3 className="font-semibold text-lg mb-1">Personal Information</h3>
-            <input defaultValue={name} placeholder="Name" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
+            <input defaultValue={name || "Roshini"} placeholder="Name" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
             <input placeholder="Email" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
             <input placeholder="Phone" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
             <input placeholder="Location" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
@@ -505,7 +505,7 @@ function Onboarding({ name, onComplete }) {
           <div>
             <h3 className="font-semibold text-lg mb-4">Resume Upload</h3>
             {!resumeName ? (
-              <button onClick={() => setResumeName("Ananya_Sharma_Resume.pdf")}
+              <button onClick={() => setResumeName("Roshini_Resume.pdf")}
                 className="w-full border-2 border-dashed border-slate-300 rounded-xl py-10 flex flex-col items-center gap-2 text-slate-500 hover:border-indigo-400 hover:text-indigo-600">
                 <Upload size={26} />
                 <span className="text-sm font-medium">Click to upload PDF / DOC / DOCX</span>
@@ -710,7 +710,7 @@ function SeekerOverview({ skills, jobs, goal, notify, go }) {
 
   return (
     <div>
-      <TopBar title={`Welcome back, Ananya`} subtitle={`Tracking your readiness for ${goal}`} />
+      <TopBar title={`Welcome back, Roshini`} subtitle={`Tracking your readiness for ${goal}`} />
       <div className="grid md:grid-cols-4 gap-5 mb-6">
         <Card className="p-5 flex items-center gap-4 md:col-span-2">
           <OrbitScore value={bestMatch} size={80} />
@@ -779,7 +779,7 @@ function ResumeView() {
       <Card className="p-6 mb-5 flex items-center gap-3">
         <FileText className="text-indigo-600" />
         <div className="flex-1">
-          <div className="text-sm font-semibold">Ananya_Sharma_Resume.pdf</div>
+          <div className="text-sm font-semibold">Roshini_Resume.pdf</div>
           <div className="text-xs text-slate-500">Uploaded · Analyzed by AI</div>
         </div>
         <button className="text-sm font-medium text-indigo-600 border border-indigo-200 rounded-lg px-4 py-2">Replace Resume</button>
@@ -1283,7 +1283,7 @@ function Certificates({ certs }) {
           <div className="bg-white rounded-2xl p-10 max-w-lg w-full text-center border-8 border-indigo-100" onClick={(e) => e.stopPropagation()}>
             <BadgeCheck className="text-indigo-600 mx-auto mb-4" size={40} />
             <div className="text-xs tracking-widest text-slate-400 uppercase mb-2">Certificate of Completion</div>
-            <div className="text-xl font-bold mb-1">Ananya Sharma</div>
+            <div className="text-xl font-bold mb-1">Roshini</div>
             <div className="text-sm text-slate-500 mb-6">has successfully completed</div>
             <div className="text-lg font-semibold text-indigo-700 mb-1">{selected.course}</div>
             <div className="text-xs text-slate-500 mb-6">Skill: {selected.skill}</div>
@@ -1339,7 +1339,7 @@ function Profile({ userName, goal }) {
           </div>
         </div>
         <div className="space-y-3 text-sm">
-          <div className="flex justify-between border-b border-slate-50 pb-2"><span className="text-slate-500">Email</span><span>ananya.sharma@example.com</span></div>
+          <div className="flex justify-between border-b border-slate-50 pb-2"><span className="text-slate-500">Email</span><span>roshini@example.com</span></div>
           <div className="flex justify-between border-b border-slate-50 pb-2"><span className="text-slate-500">Location</span><span>Erode, Tamil Nadu</span></div>
           <div className="flex justify-between border-b border-slate-50 pb-2"><span className="text-slate-500">Degree</span><span>B.Tech AI & Data Science</span></div>
           <div className="flex justify-between pb-2"><span className="text-slate-500">Member Since</span><span>Aug 2026</span></div>
@@ -1436,7 +1436,7 @@ const RECRUITER_NAV = [
 ];
 
 const MOCK_APPLICATIONS = [
-  { name: "Ananya Sharma", job: "Data Scientist", match: 72, skills: ["Python", "SQL"], gaps: ["Statistics"], exp: "Fresher", status: "Applied" },
+  { name: "Roshini", job: "Data Scientist", match: 72, skills: ["Python", "SQL"], gaps: ["Statistics"], exp: "Fresher", status: "Applied" },
   { name: "Rohit Verma", job: "Data Scientist", match: 88, skills: ["Python", "ML", "Statistics"], gaps: [], exp: "1 yr", status: "Shortlisted" },
   { name: "Priya Nair", job: "Data Analyst", match: 91, skills: ["SQL", "Power BI"], gaps: ["Python"], exp: "Fresher", status: "Interview" },
   { name: "Arjun Das", job: "ML Engineer", match: 65, skills: ["Python"], gaps: ["ML", "Statistics"], exp: "Fresher", status: "Applied" },
@@ -1634,7 +1634,7 @@ function AdminApp({ userName, onLogout }) {
           <table className="w-full text-sm">
             <thead><tr className="text-left text-xs text-slate-500 border-b border-slate-100"><th className="p-3 font-medium">Name</th><th className="p-3 font-medium">Role</th><th className="p-3 font-medium">Joined</th></tr></thead>
             <tbody>
-              {[["Ananya Sharma", "Job Seeker", "12 Aug 2026"], ["Rohit Verma", "Job Seeker", "10 Aug 2026"], ["TechNova HR", "Recruiter", "01 Jul 2026"], ["DataSphere HR", "Recruiter", "15 Jun 2026"]].map((r) => (
+              {[["Roshini", "Job Seeker", "12 Aug 2026"], ["Rohit Verma", "Job Seeker", "10 Aug 2026"], ["TechNova HR", "Recruiter", "01 Jul 2026"], ["DataSphere HR", "Recruiter", "15 Jun 2026"]].map((r) => (
                 <tr key={r[0]} className="border-b last:border-0 border-slate-50"><td className="p-3 font-medium">{r[0]}</td><td className="p-3"><Badge tone="slate">{r[1]}</Badge></td><td className="p-3 text-slate-500">{r[2]}</td></tr>
               ))}
             </tbody>
@@ -1708,7 +1708,7 @@ function AdminApp({ userName, onLogout }) {
 export default function App() {
   const [screen, setScreen] = useState("landing");
   const [role, setRole] = useState("seeker");
-  const [userName, setUserName] = useState("Ananya Sharma");
+  const [userName, setUserName] = useState("Roshini");
   const [goal, setGoal] = useState("Data Scientist");
 
   const handleAuth = (r, name) => {
